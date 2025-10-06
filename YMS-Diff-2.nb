@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    767590,      22829]
-NotebookOptionsPosition[    753872,      22604]
-NotebookOutlinePosition[    754289,      22621]
-CellTagsIndexPosition[    754246,      22618]
+NotebookDataLength[    848579,      25324]
+NotebookOptionsPosition[    829799,      25020]
+NotebookOutlinePosition[    830216,      25037]
+CellTagsIndexPosition[    830173,      25034]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21337,8 +21337,8 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"ToCanonical", "[", 
+ RowBox[{"ToCanonical", "[", 
+  RowBox[{"(", 
    RowBox[{
     RowBox[{
      RowBox[{"-", 
@@ -21440,11 +21440,12 @@ Cell[BoxData[
        $CellContext`CD[-$CellContext`\[Mu]][
         $CellContext`CD[-$CellContext`b][
          $CellContext`\[Phi][]]],
-       Editable->False], ")"}]}]}], "]"}], "//", "ContractMetric"}]], "Input",\
-
- CellChangeTimes->{{3.9685207428229647`*^9, 3.968520767786523*^9}},
+       Editable->False], ")"}]}]}], ")"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9685207428229647`*^9, 3.968520767786523*^9}, 
+   3.96852754681175*^9, {3.9685276368929987`*^9, 3.96852764293995*^9}, {
+   3.9685277703080683`*^9, 3.9685277836704903`*^9}},
  CellLabel->
-  "In[170]:=",ExpressionUUID->"0b0601cf-2100-46b5-9cd2-e4d7dcf00fbe"],
+  "In[221]:=",ExpressionUUID->"0b0601cf-2100-46b5-9cd2-e4d7dcf00fbe"],
 
 Cell[BoxData[
  RowBox[{
@@ -21549,9 +21550,11 @@ Cell[BoxData[
       $CellContext`CD[-$CellContext`b][
        $CellContext`\[Phi][]]],
      Editable->False], ")"}]}]}]], "Output",
- CellChangeTimes->{{3.968520744389195*^9, 3.968520768112462*^9}},
+ CellChangeTimes->{{3.968520744389195*^9, 3.968520768112462*^9}, 
+   3.9685275474717216`*^9, 3.96852764335563*^9, {3.968527771481203*^9, 
+   3.968527784966565*^9}},
  CellLabel->
-  "Out[170]=",ExpressionUUID->"d6c9a805-7d09-4b23-969e-72e77ee536f7"]
+  "Out[221]=",ExpressionUUID->"b9aa315f-ac5e-4411-bfae-c445b5970a7f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -21563,6 +21566,1823 @@ Cell["Lower all of the epsilon indicies ", "Subsection",
   3.968523227923793*^9, 
   3.968523229474684*^9}},ExpressionUUID->"2fb7acfb-ddb3-4ac8-a935-\
 e3a09e26bf3c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"epsiLower2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"epsilong", "[", 
+        RowBox[{
+         RowBox[{"-", "a_"}], ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"c", "=", 
+          RowBox[{
+           RowBox[{"Complement", "[", 
+            RowBox[{"IndexM", ",", 
+             RowBox[{"List", "@@", 
+              RowBox[{
+               RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}],
+            "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"epsilong", "[", 
+           RowBox[{
+            RowBox[{"-", "a"}], ",", 
+            RowBox[{"-", "b"}]}], "]"}], 
+          RowBox[{"ContractMetric", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"expr", "/.", 
+              RowBox[{"{", 
+               RowBox[{"b", ":>", "c"}], "}"}]}], ")"}], "*", 
+            RowBox[{"g", "[", 
+             RowBox[{"c", ",", "b"}], "]"}]}], "]"}]}]}]}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"epsilong", "[", 
+        RowBox[{"a_", ",", 
+         RowBox[{"-", "b_"}]}], "]"}], " ", "expr_"}], ":>", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"c", "=", 
+          RowBox[{
+           RowBox[{"Complement", "[", 
+            RowBox[{"IndexM", ",", 
+             RowBox[{"List", "@@", 
+              RowBox[{
+               RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}],
+            "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"epsilong", "[", 
+           RowBox[{
+            RowBox[{"-", "a"}], ",", 
+            RowBox[{"-", "b"}]}], "]"}], 
+          RowBox[{"ContractMetric", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"expr", "/.", 
+              RowBox[{"{", 
+               RowBox[{"a", ":>", "c"}], "}"}]}], ")"}], "*", 
+            RowBox[{"g", "[", 
+             RowBox[{"c", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"epsilong", "[", 
+        RowBox[{"a_", ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"c", ",", "d"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"c", "=", 
+          RowBox[{
+           RowBox[{"Complement", "[", 
+            RowBox[{"IndexM", ",", 
+             RowBox[{"List", "@@", 
+              RowBox[{
+               RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}],
+            "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"d", "=", 
+          RowBox[{
+           RowBox[{"Complement", "[", 
+            RowBox[{"IndexM", ",", 
+             RowBox[{"List", "@@", 
+              RowBox[{
+               RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}],
+            "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"epsilong", "[", 
+           RowBox[{
+            RowBox[{"-", "a"}], ",", 
+            RowBox[{"-", "b"}]}], "]"}], 
+          RowBox[{"ContractMetric", "[", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"expr", "/.", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"b", ":>", "c"}], ",", 
+                RowBox[{"a", ":>", "d"}]}], "}"}]}], ")"}], "*", 
+            RowBox[{"g", "[", 
+             RowBox[{"c", ",", "b"}], "]"}], "*", 
+            RowBox[{"g", "[", 
+             RowBox[{"d", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9687004788670683`*^9, 3.968700538918192*^9}, {
+  3.968701076933909*^9, 3.968701091457563*^9}},
+ CellLabel->
+  "In[263]:=",ExpressionUUID->"d7385de5-f19a-4cf5-ba40-84f62909d463"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {" ", "b"},
+            {"a", " "}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+     Editable->False], " ", 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SuperscriptBox["D", "a"], "\[Phi]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`CD[$CellContext`a][
+       $CellContext`\[Phi][]],
+      Editable->False], ")"}], " ", 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["D", "\[Mu]"], 
+        SubscriptBox["D", "b"], "\[Phi]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`CD[-$CellContext`\[Mu]][
+       $CellContext`CD[-$CellContext`b][
+        $CellContext`\[Phi][]]],
+      Editable->False], ")"}]}], "/.", "epsiLower2"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {"a", "b"},
+            {" ", " "}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[$CellContext`a, $CellContext`b],
+     Editable->False], " ", 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["D", "a"], "\[Phi]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`CD[-$CellContext`a][
+       $CellContext`\[Phi][]],
+      Editable->False], ")"}], " ", 
+    RowBox[{"(", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{
+        SubscriptBox["D", "\[Mu]"], 
+        SubscriptBox["D", "b"], "\[Phi]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`CD[-$CellContext`\[Mu]][
+       $CellContext`CD[-$CellContext`b][
+        $CellContext`\[Phi][]]],
+      Editable->False], ")"}]}], "/.", "epsiLower2"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", "epsiLower2"}]}], "Input",
+ CellChangeTimes->{{3.968700557278102*^9, 3.968700622483535*^9}, {
+  3.968700671706912*^9, 3.968700695065982*^9}, {3.9687007908377533`*^9, 
+  3.968700792410602*^9}},
+ CellLabel->
+  "In[264]:=",ExpressionUUID->"db7c1275-5c58-40a1-a871-ea5c6c54e41a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"a", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{
+       RowBox[{"+", "a_"}], ",", 
+       RowBox[{"+", "b_"}]}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"c", ",", "d"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"d", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"b", ":>", "c"}], ",", 
+              RowBox[{"a", ":>", "d"}]}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "b"}], "]"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"d", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}], "}"}]}]], \
+"Input",
+ CellChangeTimes->{{3.968701119013216*^9, 3.968701143886945*^9}},
+ CellLabel->
+  "In[268]:=",ExpressionUUID->"02808453-58fa-491c-b9f8-0f19d0c63409"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", "b"},
+           {" ", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, $CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "d"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`d][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "c"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`c][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.9687583660379143`*^9, 3.968758367955885*^9}},
+ CellLabel->
+  "In[273]:=",ExpressionUUID->"41d4dc24-8aa4-4b7d-8a89-578276f8b3f4"],
+
+Cell["(epsilong[a, b]*CD[d][\[Phi][]]*CD[-\[Mu]][CD[c][\[Phi][]]])/2", \
+"Output",
+ CellChangeTimes->{3.9687583683870792`*^9},
+ CellLabel->
+  "Out[273]//InputForm=",ExpressionUUID->"b8464e8f-0d10-4030-b26a-\
+6e796827e7d1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.968758390638893*^9, 3.968758394010404*^9}},
+ CellLabel->
+  "In[275]:=",ExpressionUUID->"c1fa2860-2894-4625-87cc-45194c0bbc80"],
+
+Cell["(epsilong[a, -b]*CD[-a][\[Phi][]]*CD[-\[Mu]][CD[b][\[Phi][]]])/2", \
+"Output",
+ CellChangeTimes->{3.9687583943931713`*^9},
+ CellLabel->
+  "Out[275]//InputForm=",ExpressionUUID->"09fb4be1-c6e3-4e0e-a346-\
+183b7d8776fc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", "//", "InputForm"}]}]], "Input",
+ CellChangeTimes->{{3.968758424415181*^9, 3.968758426091281*^9}},
+ CellLabel->
+  "In[278]:=",ExpressionUUID->"feb632fc-94d0-4c5e-b363-9ee7f82711af"],
+
+Cell["epsilong[a, -b]", "Output",
+ CellChangeTimes->{3.9687584264588537`*^9},
+ CellLabel->
+  "Out[278]//InputForm=",ExpressionUUID->"20600874-1e81-40b4-8e04-\
+5bbcb28e19ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False]}], "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.968758401379228*^9, 3.9687584131548643`*^9}},
+ CellLabel->
+  "In[277]:=",ExpressionUUID->"650246d7-53ee-4884-9015-a24ff464099c"],
+
+Cell["epsilong[a, -b]/2", "Output",
+ CellChangeTimes->{{3.9687584034625187`*^9, 3.968758413631052*^9}},
+ CellLabel->
+  "Out[277]//InputForm=",ExpressionUUID->"cf60fb74-7013-455d-b4c8-\
+9872f51a1e02"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Canonicalizing", " ", "expressions", " ", "differently"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.9687587652683992`*^9, 
+  3.968758776733877*^9}},ExpressionUUID->"6d2778b6-5e7a-4964-b073-\
+5a9375ab45ba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "2"], " ", 
+         InterpretationBox[
+          StyleBox[GridBox[{
+             {"\[Epsilon]g", 
+              StyleBox[GridBox[{
+                 {"a", "b"},
+                 {" ", " "}
+                },
+                GridBoxSpacings->{"Columns" -> {
+                    Offset[0.], {
+                    Offset[0.034999999999999996`]}, 
+                    Offset[0.]}, "Rows" -> {{
+                    Offset[0.]}}}],
+               FontSize->Rational[39, 4]]}
+            },
+            GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+            
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`epsilong[$CellContext`a, $CellContext`b],
+          Editable->False], " ", 
+         RowBox[{"(", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             SubscriptBox["D", "a"], "\[Phi]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`CD[-$CellContext`a][
+            $CellContext`\[Phi][]],
+           Editable->False], ")"}], " ", 
+         RowBox[{"(", 
+          InterpretationBox[
+           StyleBox[
+            RowBox[{
+             SubscriptBox["D", "\[Mu]"], 
+             SubscriptBox["D", "b"], "\[Phi]"}],
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`CD[-$CellContext`\[Mu]][
+            $CellContext`CD[-$CellContext`b][
+             $CellContext`\[Phi][]]],
+           Editable->False], ")"}]}], "//", "SortCovDs"}], ")"}], "//", 
+      "ToCanonical"}], ")"}], "//", "SortCovDs"}], ")"}], "//", 
+  "ToCanonical"}]], "Input",
+ CellChangeTimes->{{3.968758671243846*^9, 3.968758686025547*^9}, {
+  3.968758733554647*^9, 3.968758798527047*^9}},
+ CellLabel->
+  "In[297]:=",ExpressionUUID->"f3ceeb2a-ee34-4ff2-b162-096c3653f80c"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", "b"},
+          {"a", " "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SubscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[-$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{{3.968758674081594*^9, 3.96875868668007*^9}, {
+  3.968758739795451*^9, 3.96875875451528*^9}, {3.96875878738484*^9, 
+  3.96875879900359*^9}},
+ CellLabel->
+  "Out[297]=",ExpressionUUID->"541cbbfb-001e-4e92-a7bc-2ee3c68db9ae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     InterpretationBox[
+      StyleBox[GridBox[{
+         {"\[Epsilon]g", 
+          StyleBox[GridBox[{
+             {"a", " "},
+             {" ", "b"}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "Rows" -> {{
+                 Offset[0.]}}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["D", "a"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[-$CellContext`a][
+        $CellContext`\[Phi][]],
+       Editable->False], ")"}], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["D", "\[Mu]"], 
+         SuperscriptBox["D", "b"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[-$CellContext`\[Mu]][
+        $CellContext`CD[$CellContext`b][
+         $CellContext`\[Phi][]]],
+       Editable->False], ")"}]}], "//", "SortCovDs"}], ")"}], "//", 
+  "ToCanonical"}]], "Input",
+ CellChangeTimes->{
+  3.968758380453638*^9, {3.968758654914517*^9, 3.968758659753059*^9}, {
+   3.968758698114972*^9, 3.968758711745882*^9}},
+ CellLabel->
+  "In[292]:=",ExpressionUUID->"cdd42947-1ccc-4046-8e51-912466911f38"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"a", "b"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SuperscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.9687583276149063`*^9, 3.968758377574041*^9, 3.968758660461562*^9, {
+   3.968758705585764*^9, 3.968758712237232*^9}},
+ CellLabel->
+  "Out[292]=",ExpressionUUID->"ea5fd789-83ef-495e-8c11-ae7d68ec83cc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MatchQ", "[", 
+   RowBox[{
+    RowBox[{"epsilong", "[", 
+     RowBox[{
+      RowBox[{"-", "a"}], ",", "b"}], "]"}], ",", 
+    RowBox[{"epsilong", "[", 
+     RowBox[{"a_", ",", 
+      RowBox[{"-", "b_"}]}], "]"}]}], " ", "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"Strangeness", " ", "with", " ", "mattern", " ", "matching"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.9687582890942097`*^9, 3.9687583190759773`*^9}, {
+  3.968758442061812*^9, 3.9687584836590977`*^9}, {3.9687585189783688`*^9, 
+  3.968758592730372*^9}},
+ CellLabel->
+  "In[287]:=",ExpressionUUID->"ea156b44-aeee-42b0-9003-cd1fdcf304ea"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.968758309856744*^9, 3.968758319847706*^9}, {
+   3.968758442642268*^9, 3.9687584841444597`*^9}, 3.968758544156437*^9, {
+   3.968758576071656*^9, 3.9687585932235727`*^9}},
+ CellLabel->
+  "Out[287]=",ExpressionUUID->"359558bf-82c5-4727-af90-00962b61cae3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Options", "[", "MakeRule", "]"}]], "Input",
+ CellChangeTimes->{{3.968757988321191*^9, 3.968757994895238*^9}},
+ CellLabel->
+  "In[269]:=",ExpressionUUID->"22efb092-f9dd-4ae8-8a7a-c7afb8b4437e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"PatternIndices", "\[Rule]", "All"}], ",", 
+   RowBox[{"TestIndices", "\[Rule]", "True"}], ",", 
+   RowBox[{"MetricOn", "\[Rule]", "All"}], ",", 
+   RowBox[{"UseSymmetries", "\[Rule]", "True"}], ",", 
+   RowBox[{"Verbose", "\[Rule]", "False"}], ",", 
+   RowBox[{"ContractMetrics", "\[Rule]", "True"}], ",", 
+   RowBox[{"Evaluate", "\[Rule]", "False"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.968757995399563*^9},
+ CellLabel->
+  "Out[269]=",ExpressionUUID->"a65c5b1f-04b5-4753-b969-02a79844cdaa"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", "b"},
+          {"a", " "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SubscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[-$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Input",ExpressionUUID->"c48056be-ecfa-41ca-\
+b6c9-fcecbadc7511"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", "b"},
+           {" ", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, $CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SubscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[-$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{
+       RowBox[{"-", "a_"}], ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{"b", ":>", "c"}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "b"}], "]"}]}], "]"}]}]}]}], "]"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.968701050335657*^9, 3.968701050953734*^9}},
+ CellLabel->
+  "In[262]:=",ExpressionUUID->"b8b3c7e1-73ee-4f25-92eb-d5c3ff6724b8"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {"a", "b"},
+          {" ", " "}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[$CellContext`a, $CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SubscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[-$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{3.968701051418981*^9},
+ CellLabel->
+  "Out[262]=",ExpressionUUID->"aae2df05-aa33-49a2-826d-ffe052f3634c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"c", ",", "d"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"d", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"b", ":>", "c"}], ",", 
+              RowBox[{"a", ":>", "d"}]}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "b"}], "]"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"d", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.968700861667584*^9, 3.968700876815682*^9}},
+ CellLabel->
+  "In[261]:=",ExpressionUUID->"571acce0-cbd3-4389-8c14-cd1a51a6a3bb"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Validate", "repeated", 
+   "\"Found indices with the same name \\!\\(\\*RowBox[{\\\"\\\\\\\"a\\\\\\\"\
+\\\"}]\\).\"", 2, 261, 75, 27315311830736298432, "Local", 
+   "xAct`xTensor`Validate"},
+  "MessageTemplate2"]], "Message", "MSG",
+ CellChangeTimes->{3.968700877403002*^9},
+ CellLabel->
+  "During evaluation of \
+In[261]:=",ExpressionUUID->"2dcefff0-54c4-45be-9de1-4261541b3376"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Throw", "nocatch", 
+   "\"Uncaught \\!\\(\\*RowBox[{\\\"Throw\\\", \\\"[\\\", \\\"Null\\\", \\\"]\
+\\\"}]\\) returned to top level.\"", 2, 261, 76, 27315311830736298432, 
+   "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.968700877422649*^9},
+ CellLabel->
+  "During evaluation of \
+In[261]:=",ExpressionUUID->"2121d05c-a957-42ba-81f3-cc1f5f001d1c"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Throw", "[", "Null", "]"}], "]"}]], "Output",
+ CellChangeTimes->{{3.968700846467054*^9, 3.968700877440773*^9}},
+ CellLabel->
+  "Out[261]=",ExpressionUUID->"f49c569f-fbbd-4cbb-9115-fbe9df0c34c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {" ", "b"},
+           {"a", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SubscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[-$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{
+       RowBox[{"-", "a_"}], ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{"b", ":>", "c"}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "b"}], "]"}]}], "]"}]}]}]}], "]"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.96869963110707*^9, 3.968699777197151*^9}, {
+  3.9686999109626207`*^9, 3.968699971480644*^9}, {3.96870011719022*^9, 
+  3.968700142550745*^9}},
+ CellLabel->
+  "In[231]:=",ExpressionUUID->"f055e201-c2a4-48f7-a029-127c15badfb3"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"a", "b"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SuperscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{{3.968699911549098*^9, 3.9686999334056787`*^9}, 
+   3.968699972156275*^9, 3.9687001464364853`*^9},
+ CellLabel->
+  "Out[231]=",ExpressionUUID->"8bc7fa1a-8463-4377-b29f-689082ab624d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SubscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[-$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{"b", ":>", "c"}], "}"}]}]], "Input",
+ CellChangeTimes->{3.968699794875937*^9},
+ CellLabel->
+  "In[227]:=",ExpressionUUID->"ac6ed17c-e45c-4c76-90db-143ba0782f33"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SubscriptBox["D", "c"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[-$CellContext`c][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{{3.968699628220343*^9, 3.968699636704109*^9}, {
+  3.968699768027692*^9, 3.968699795284789*^9}},
+ CellLabel->
+  "Out[227]=",ExpressionUUID->"66a09799-be05-4dfa-96bd-0ffd8ed2f00f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"epsilong", "[", 
+     RowBox[{"a", ",", " ", "b"}], "]"}], "*", 
+    RowBox[{
+     RowBox[{"CD", "[", 
+      RowBox[{"-", "a"}], "]"}], "[", 
+     RowBox[{"\[Phi]", "[", "]"}], "]"}], "*", 
+    RowBox[{
+     RowBox[{"CD", "[", 
+      RowBox[{"-", "\[Mu]"}], "]"}], "[", 
+     RowBox[{
+      RowBox[{"CD", "[", 
+       RowBox[{"-", "b"}], "]"}], "[", 
+      RowBox[{"\[Phi]", "[", "]"}], "]"}], "]"}]}], ")"}], "/", 
+  "2"}]], "Input",
+ CellChangeTimes->{{3.968700245169442*^9, 3.968700252924004*^9}},
+ CellLabel->
+  "In[233]:=",ExpressionUUID->"84d082b9-6e21-4c7b-b810-eec00420b4d0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", "b"},
+           {" ", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, $CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SubscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[-$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{"a_", ",", "b_"}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"c", ",", "d"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"d", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"b", ":>", "c"}], ",", 
+              RowBox[{"a", ":>", "d"}]}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "b"}], "]"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"d", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}], "}"}]}]], \
+"Input",
+ CellChangeTimes->{{3.968700266459738*^9, 3.96870032854068*^9}},
+ CellLabel->
+  "In[235]:=",ExpressionUUID->"86c86df1-2e3d-4077-9f59-bcf0811bc593"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"a", "b"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SuperscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{3.968700312590392*^9, 3.9687003616292477`*^9},
+ CellLabel->
+  "Out[235]=",ExpressionUUID->"dde132a2-568a-4c0e-9b76-0bb27fc1f9a0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"epsilong", "[", 
+     RowBox[{"a", ",", 
+      RowBox[{"-", " ", "b"}]}], "]"}], "*", 
+    RowBox[{
+     RowBox[{"CD", "[", 
+      RowBox[{"-", "a"}], "]"}], "[", 
+     RowBox[{"\[Phi]", "[", "]"}], "]"}], "*", 
+    RowBox[{
+     RowBox[{"CD", "[", 
+      RowBox[{"-", "\[Mu]"}], "]"}], "[", 
+     RowBox[{
+      RowBox[{"CD", "[", "b", "]"}], "[", 
+      RowBox[{"\[Phi]", "[", "]"}], "]"}], "]"}]}], ")"}], "/", 
+  "2"}]], "Input",
+ CellChangeTimes->{{3.968700408739238*^9, 3.9687004104680758`*^9}},
+ CellLabel->
+  "In[236]:=",ExpressionUUID->"410e300a-b772-4fb9-9893-8cb4b500481c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SuperscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"epsilong", "[", 
+      RowBox[{"a_", ",", 
+       RowBox[{"-", "b_"}]}], "]"}], " ", "expr_"}], ":>", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"c", "=", 
+        RowBox[{
+         RowBox[{"Complement", "[", 
+          RowBox[{"IndexM", ",", 
+           RowBox[{"List", "@@", 
+            RowBox[{
+             RowBox[{"IndicesOf", "[", "]"}], "[", "expr", "]"}]}]}], "]"}], 
+         "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", 
+       RowBox[{
+        RowBox[{"epsilong", "[", 
+         RowBox[{
+          RowBox[{"-", "a"}], ",", 
+          RowBox[{"-", "b"}]}], "]"}], 
+        RowBox[{"ContractMetric", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"expr", "/.", 
+            RowBox[{"{", 
+             RowBox[{"a", ":>", "c"}], "}"}]}], ")"}], "*", 
+          RowBox[{"g", "[", 
+           RowBox[{"c", ",", "a"}], "]"}]}], "]"}]}]}]}], "]"}]}], "}"}]}]], \
+"Input",
+ CellChangeTimes->{{3.968700424244214*^9, 3.9687004424839993`*^9}},
+ CellLabel->
+  "In[237]:=",ExpressionUUID->"33751858-097b-46e6-b805-a99f24b1848a"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {"\[Epsilon]g", 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"a", "b"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+   Editable->False], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SuperscriptBox["D", "a"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`a][
+     $CellContext`\[Phi][]],
+    Editable->False], ")"}], " ", 
+  RowBox[{"(", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{
+      SubscriptBox["D", "\[Mu]"], 
+      SuperscriptBox["D", "b"], "\[Phi]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[-$CellContext`\[Mu]][
+     $CellContext`CD[$CellContext`b][
+      $CellContext`\[Phi][]]],
+    Editable->False], ")"}]}]], "Output",
+ CellChangeTimes->{3.96870044309518*^9},
+ CellLabel->
+  "Out[237]=",ExpressionUUID->"960c100c-5d28-4f54-ae64-1c50f21e52cc"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.968699333386551*^9, 3.968699374240344*^9}, {
+   3.9686995018268547`*^9, 3.9686995321652946`*^9}, {3.968699565703885*^9, 
+   3.968699598557026*^9}, 
+   3.968700475503047*^9},ExpressionUUID->"958a75ba-b780-408b-b98b-\
+56fe74ac1d31"],
 
 Cell[BoxData[
  RowBox[{
@@ -22050,6 +23870,602 @@ Cell[BoxData[
   3.968526751717111*^9, {3.96852678636448*^9, 3.96852680012429*^9}},
  CellLabel->
   "Out[214]=",ExpressionUUID->"8b1e897a-3fe5-4737-b2fa-29baa2a8a959"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SortCovDs", "[", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {"a", " "},
+            {" ", "b"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"A", 
+         StyleBox[GridBox[{
+            {"c", 
+             RowBox[{";", "b"}], "  "},
+            {" ", "  ", 
+             RowBox[{";", "a"}]}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`A[$CellContext`c]]],
+     Editable->False]}], "-", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {" ", " "},
+            {"a", "b"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"A", 
+         StyleBox[GridBox[{
+            {"c", 
+             RowBox[{";", "b"}], 
+             RowBox[{";", "a"}]},
+            {" ", "  ", "  "}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`A[$CellContext`c]]],
+     Editable->False]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9685274414775543`*^9, 
+  3.9685274588337584`*^9}},ExpressionUUID->"042d5311-7d8e-415b-a802-\
+14d00b61b625"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {"a", " "},
+           {" ", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"A", 
+        StyleBox[GridBox[{
+           {"c", "  ", 
+            RowBox[{";", "b"}]},
+           {" ", 
+            RowBox[{";", "a"}], "  "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`b][
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`A[$CellContext`c]]],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"a", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"A", 
+        StyleBox[GridBox[{
+           {"c", 
+            RowBox[{";", "a"}], 
+            RowBox[{";", "b"}]},
+           {" ", "  ", "  "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`CD[$CellContext`b][
+     $CellContext`CD[$CellContext`a][
+      $CellContext`A[$CellContext`c]]],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.9685274543017597`*^9},
+ CellLabel->
+  "Out[215]=",ExpressionUUID->"cd3cd4de-4f80-498d-9fb1-e024dcc81d97"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9685274763762217`*^9, 
+  3.9685274778119783`*^9}},ExpressionUUID->"7da66d72-36e6-4450-8180-\
+037cdf811064"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToCanonical", "[", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], " ", 
+     InterpretationBox[
+      StyleBox[GridBox[{
+         {"\[Epsilon]g", 
+          StyleBox[GridBox[{
+             {" ", " "},
+             {"a", "b"}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "Rows" -> {{
+                 Offset[0.]}}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SuperscriptBox["D", "a"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[$CellContext`a][
+        $CellContext`\[Phi][]],
+       Editable->False], ")"}], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SuperscriptBox["D", "b"], 
+         SubscriptBox["D", "\[Mu]"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[$CellContext`b][
+        $CellContext`CD[-$CellContext`\[Mu]][
+         $CellContext`\[Phi][]]],
+       Editable->False], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     InterpretationBox[
+      StyleBox[GridBox[{
+         {"\[Epsilon]g", 
+          StyleBox[GridBox[{
+             {" ", "b"},
+             {"a", " "}
+            },
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.], {
+                 Offset[0.034999999999999996`]}, 
+                Offset[0.]}, "Rows" -> {{
+                 Offset[0.]}}}],
+           FontSize->Rational[39, 4]]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.034999999999999996`]}, 
+            Offset[0.27999999999999997`]}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+      Editable->False], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SuperscriptBox["D", "a"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[$CellContext`a][
+        $CellContext`\[Phi][]],
+       Editable->False], ")"}], " ", 
+     RowBox[{"(", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{
+         SubscriptBox["D", "\[Mu]"], 
+         SubscriptBox["D", "b"], "\[Phi]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`CD[-$CellContext`\[Mu]][
+        $CellContext`CD[-$CellContext`b][
+         $CellContext`\[Phi][]]],
+       Editable->False], ")"}]}]}], ")"}], "]"}]], "Input",
+ CellLabel->
+  "In[222]:=",ExpressionUUID->"89921530-27e5-44c0-80eb-97c0c6e50468"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", "2"]}], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"a", "b"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "b"], 
+       SubscriptBox["D", "\[Mu]"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`b][
+      $CellContext`CD[-$CellContext`\[Mu]][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"\[Epsilon]g", 
+        StyleBox[GridBox[{
+           {" ", "b"},
+           {"a", " "}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`epsilong[-$CellContext`a, $CellContext`b],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SuperscriptBox["D", "a"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`\[Phi][]],
+     Editable->False], ")"}], " ", 
+   RowBox[{"(", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{
+       SubscriptBox["D", "\[Mu]"], 
+       SubscriptBox["D", "b"], "\[Phi]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`\[Mu]][
+      $CellContext`CD[-$CellContext`b][
+       $CellContext`\[Phi][]]],
+     Editable->False], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.9685277922547503`*^9},
+ CellLabel->
+  "Out[222]=",ExpressionUUID->"375d38c8-4ba3-409d-9ef1-beaddefcc904"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToCanonical", "[", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {"a", " "},
+            {" ", "b"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[$CellContext`a, -$CellContext`b],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"A", 
+         StyleBox[GridBox[{
+            {"c", 
+             RowBox[{";", "b"}], "  "},
+            {" ", "  ", 
+             RowBox[{";", "a"}]}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[-$CellContext`a][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`A[$CellContext`c]]],
+     Editable->False]}], "-", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"\[Epsilon]g", 
+         StyleBox[GridBox[{
+            {" ", " "},
+            {"a", "b"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`epsilong[-$CellContext`a, -$CellContext`b],
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"A", 
+         StyleBox[GridBox[{
+            {"c", 
+             RowBox[{";", "b"}], 
+             RowBox[{";", "a"}]},
+            {" ", "  ", "  "}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`CD[$CellContext`a][
+      $CellContext`CD[$CellContext`b][
+       $CellContext`A[$CellContext`c]]],
+     Editable->False]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9685274647879267`*^9, 3.9685275167927723`*^9}},
+ CellLabel->
+  "In[216]:=",ExpressionUUID->"341b2f54-659c-4343-9a28-eb91b97265ca"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.968527517928856*^9},
+ CellLabel->
+  "Out[216]=",ExpressionUUID->"19536f0c-9241-4075-863c-08fc2ef7d5cc"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -22664,7 +25080,7 @@ Cell[22128, 572, 690, 16, 24, "Print",ExpressionUUID->"4376078c-617e-4ff3-afa2-b
 Cell[22821, 590, 666, 14, 24, "Print",ExpressionUUID->"7d86c240-b552-4601-84f3-c80b7090cd5c"]
 }, Open  ]]
 }, Open  ]],
-Cell[23514, 608, 454, 10, 85, "Input",ExpressionUUID->"6544f4ca-bed7-44c9-b816-884c32f3bdea"],
+Cell[23514, 608, 454, 10, 30, "Input",ExpressionUUID->"6544f4ca-bed7-44c9-b816-884c32f3bdea"],
 Cell[CellGroupData[{
 Cell[23993, 622, 161, 3, 54, "Subsection",ExpressionUUID->"e1c9764a-c5ac-48a7-8177-053fc218237e"],
 Cell[CellGroupData[{
@@ -22738,97 +25154,176 @@ Cell[691297, 20619, 270, 6, 30, "Input",ExpressionUUID->"cf2ea317-7135-4abb-81e2
 Cell[691570, 20627, 22722, 706, 125, "Output",ExpressionUUID->"797902fc-751c-4bcf-bb65-d417f3bee647"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[714329, 21338, 3554, 108, 47, "Input",ExpressionUUID->"0b0601cf-2100-46b5-9cd2-e4d7dcf00fbe"],
-Cell[717886, 21448, 3273, 105, 49, "Output",ExpressionUUID->"d6c9a805-7d09-4b23-969e-72e77ee536f7"]
+Cell[714329, 21338, 3664, 109, 47, "Input",ExpressionUUID->"0b0601cf-2100-46b5-9cd2-e4d7dcf00fbe"],
+Cell[717996, 21449, 3372, 107, 49, "Output",ExpressionUUID->"b9aa315f-ac5e-4411-bfae-c445b5970a7f"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[721220, 21560, 233, 4, 54, "Subsection",ExpressionUUID->"2fb7acfb-ddb3-4ac8-a935-e3a09e26bf3c"],
-Cell[721456, 21566, 2781, 78, 157, "Input",ExpressionUUID->"16170c84-da20-4951-9790-f182f1ec55fc"],
-Cell[724240, 21646, 217, 4, 30, "Input",ExpressionUUID->"03e94392-cf42-49b7-a691-a7616de5ceb0"],
-Cell[724460, 21652, 2516, 75, 157, "Input",ExpressionUUID->"6bbcf7e4-89e3-47fe-aea0-c5cbd68c79fd"],
+Cell[721429, 21563, 233, 4, 54, "Subsection",ExpressionUUID->"2fb7acfb-ddb3-4ac8-a935-e3a09e26bf3c"],
+Cell[721665, 21569, 4119, 116, 241, "Input",ExpressionUUID->"d7385de5-f19a-4cf5-ba40-84f62909d463"],
+Cell[725787, 21687, 5148, 162, 127, "Input",ExpressionUUID->"db7c1275-5c58-40a1-a871-ea5c6c54e41a"],
+Cell[730938, 21851, 3295, 102, 112, InheritFromParent,ExpressionUUID->"02808453-58fa-491c-b9f8-0f19d0c63409"],
 Cell[CellGroupData[{
-Cell[727001, 21731, 364, 12, 30, "Input",ExpressionUUID->"b1d1d389-01f2-416e-963c-fe00e4efd1cf"],
-Cell[727368, 21745, 1954, 60, 43, "Output",ExpressionUUID->"9c3ebd57-6b58-4f71-9859-7a4adaf95bd1"]
+Cell[734258, 21957, 1735, 54, 47, InheritFromParent,ExpressionUUID->"41d4dc24-8aa4-4b7d-8a89-578276f8b3f4"],
+Cell[735996, 22013, 222, 5, 45, "Output",ExpressionUUID->"b8464e8f-0d10-4030-b26a-6e796827e7d1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[729359, 21810, 475, 14, 30, "Input",ExpressionUUID->"36681bde-6a5a-4c92-9cfe-f40df9420e22"],
-Cell[729837, 21826, 1935, 60, 43, "Output",ExpressionUUID->"ab29d7b8-18bf-423c-9174-a7d1c44783d1"]
+Cell[736255, 22023, 1733, 54, 47, "Input",ExpressionUUID->"c1fa2860-2894-4625-87cc-45194c0bbc80"],
+Cell[737991, 22079, 224, 5, 45, "Output",ExpressionUUID->"09fb4be1-c6e3-4e0e-a346-183b7d8776fc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[731809, 21891, 430, 13, 30, "Input",ExpressionUUID->"bc368e8c-72c3-4e35-98a6-8bce8c113d5b"],
-Cell[732242, 21906, 1933, 60, 47, "Output",ExpressionUUID->"fecf44e0-2d99-40ab-b9e5-879827bac745"]
+Cell[738252, 22089, 1080, 31, 34, "Input",ExpressionUUID->"feb632fc-94d0-4c5e-b363-9ee7f82711af"],
+Cell[739335, 22122, 173, 4, 45, "Output",ExpressionUUID->"20600874-1e81-40b4-8e04-5bbcb28e19ad"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[734212, 21971, 552, 17, 30, "Input",ExpressionUUID->"95163c00-ccbd-49c3-8f88-79127e1d917d"],
-Cell[734767, 21990, 1980, 61, 70, "Output",ExpressionUUID->"8b1e897a-3fe5-4737-b2fa-29baa2a8a959"]
+Cell[739545, 22131, 1104, 32, 47, "Input",ExpressionUUID->"650246d7-53ee-4884-9015-a24ff464099c"],
+Cell[740652, 22165, 199, 4, 45, "Output",ExpressionUUID->"cf60fb74-7013-455d-b4c8-9872f51a1e02"]
+}, Open  ]],
+Cell[740866, 22172, 248, 6, 30, "Input",ExpressionUUID->"6d2778b6-5e7a-4964-b073-5a9375ab45ba"],
+Cell[CellGroupData[{
+Cell[741139, 22182, 2285, 64, 47, "Input",ExpressionUUID->"f3ceeb2a-ee34-4ff2-b162-096c3653f80c"],
+Cell[743427, 22248, 1747, 55, 72, "Output",ExpressionUUID->"541cbbfb-001e-4e92-a7bc-2ee3c68db9ae"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[736784, 22056, 471, 14, 30, "Input",ExpressionUUID->"4301e5e4-2189-47c8-9bb9-3dc7c4ea4154"],
-Cell[737258, 22072, 443, 10, 28, "Message",ExpressionUUID->"684755cc-4557-44e4-a62b-4a58b6fb7a29"],
-Cell[737704, 22084, 430, 10, 28, "Message",ExpressionUUID->"7ce68782-7267-4993-8217-241cb2fb4ac5"],
-Cell[738137, 22096, 246, 5, 34, "Output",ExpressionUUID->"cdec77b3-758c-4967-9d2f-d11b06868a12"]
+Cell[745211, 22308, 1969, 59, 47, "Input",ExpressionUUID->"cdd42947-1ccc-4046-8e51-912466911f38"],
+Cell[747183, 22369, 1730, 55, 49, "Output",ExpressionUUID->"ea5fd789-83ef-495e-8c11-ae7d68ec83cc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[738420, 22106, 474, 14, 30, "Input",ExpressionUUID->"de97f430-d7f9-4aab-ac9a-41957b765d96"],
-Cell[738897, 22122, 415, 10, 28, "Message",ExpressionUUID->"c360a6f4-f7a9-4f84-8dab-fa3dd826f4c9"],
-Cell[739315, 22134, 403, 10, 28, "Message",ExpressionUUID->"2f403488-5caf-4fcb-a58e-aa75c1e130b8"],
-Cell[739721, 22146, 218, 5, 34, "Output",ExpressionUUID->"43608736-2d6d-4291-bae8-a2f8dee8024e"]
+Cell[748950, 22429, 632, 17, 30, "Input",ExpressionUUID->"ea156b44-aeee-42b0-9003-cd1fdcf304ea"],
+Cell[749585, 22448, 307, 5, 34, "Output",ExpressionUUID->"359558bf-82c5-4727-af90-00962b61cae3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[739976, 22156, 587, 17, 30, "Input",ExpressionUUID->"3590ca73-50e8-492e-8559-dd9b0681a991"],
-Cell[740566, 22175, 316, 8, 34, "Output",ExpressionUUID->"d6cd1684-48b4-4bed-90fa-dd3682ff3a1a"]
+Cell[749929, 22458, 216, 4, 30, "Input",ExpressionUUID->"22efb092-f9dd-4ae8-8a7a-c7afb8b4437e"],
+Cell[750148, 22464, 548, 12, 56, "Output",ExpressionUUID->"a65c5b1f-04b5-4753-b969-02a79844cdaa"]
+}, Open  ]],
+Cell[750711, 22479, 1560, 51, 47, "Input",ExpressionUUID->"c48056be-ecfa-41ca-b6c9-fcecbadc7511"],
+Cell[CellGroupData[{
+Cell[752296, 22534, 2759, 87, 91, "Input",ExpressionUUID->"b8b3c7e1-73ee-4f25-92eb-d5c3ff6724b8"],
+Cell[755058, 22623, 1627, 53, 49, "Output",ExpressionUUID->"aae2df05-aa33-49a2-826d-ffe052f3634c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[740919, 22188, 369, 6, 30, "Input",ExpressionUUID->"1bd2f1d5-eb15-4937-a708-e0061897ef29"],
-Cell[741291, 22196, 315, 6, 34, "Output",ExpressionUUID->"396a27a7-be19-4975-8c72-aacaac9d7b25"]
+Cell[756722, 22681, 3249, 100, 112, "Input",ExpressionUUID->"571acce0-cbd3-4389-8c14-cd1a51a6a3bb"],
+Cell[759974, 22783, 412, 10, 28, "Message",ExpressionUUID->"2dcefff0-54c4-45be-9de1-4261541b3376"],
+Cell[760389, 22795, 404, 10, 28, "Message",ExpressionUUID->"2121d05c-a957-42ba-81f3-cc1f5f001d1c"],
+Cell[760796, 22807, 242, 5, 34, "Output",ExpressionUUID->"f49c569f-fbbd-4cbb-9115-fbe9df0c34c1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[741643, 22207, 691, 20, 30, "Input",ExpressionUUID->"7267451d-53dc-4179-b2ea-923ebb282270"],
-Cell[742337, 22229, 177, 3, 34, "Output",ExpressionUUID->"06006c09-c3bb-4dd5-8ed3-a3b577771ce1"]
-}, Open  ]],
-Cell[742529, 22235, 248, 4, 30, "Input",ExpressionUUID->"0b20fcac-1ab6-4ac1-816c-3c85fe8a123b"],
-Cell[CellGroupData[{
-Cell[742802, 22243, 533, 16, 30, "Input",ExpressionUUID->"66c8cefb-e41d-4afc-836f-84050e9de8a6"],
-Cell[743338, 22261, 410, 10, 28, "Message",ExpressionUUID->"843dc3e6-b7ac-409d-af31-6181cbfa1fae"],
-Cell[743751, 22273, 463, 10, 28, "Message",ExpressionUUID->"f58de5c1-0ec0-4fb3-b7ac-bef7f3754c14"],
-Cell[744217, 22285, 404, 10, 28, "Message",ExpressionUUID->"e7045851-37c1-431d-96ec-745f15dbfc08"],
-Cell[744624, 22297, 242, 5, 34, "Output",ExpressionUUID->"a968897e-5138-4419-8e1f-9c94e4772e8d"]
+Cell[761075, 22817, 2859, 89, 91, "Input",ExpressionUUID->"f055e201-c2a4-48f7-a029-127c15badfb3"],
+Cell[763937, 22908, 1707, 54, 49, "Output",ExpressionUUID->"8bc7fa1a-8463-4377-b29f-689082ab624d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[744903, 22307, 607, 17, 30, "Input",ExpressionUUID->"a9380db0-2e26-4d9b-8acd-d1f4b51c2dc8"],
-Cell[745513, 22326, 375, 12, 34, "Output",ExpressionUUID->"89538886-35c3-4e3c-81ca-d5a35181c6dd"]
+Cell[765681, 22967, 857, 29, 33, "Input",ExpressionUUID->"ac6ed17c-e45c-4c76-90db-143ba0782f33"],
+Cell[766541, 22998, 837, 27, 37, "Output",ExpressionUUID->"66a09799-be05-4dfa-96bd-0ffd8ed2f00f"]
+}, Open  ]],
+Cell[767393, 23028, 648, 20, 30, "Input",ExpressionUUID->"84d082b9-6e21-4c7b-b810-eec00420b4d0"],
+Cell[CellGroupData[{
+Cell[768066, 23052, 3244, 100, 112, InheritFromParent,ExpressionUUID->"86c86df1-2e3d-4077-9f59-bcf0811bc593"],
+Cell[771313, 23154, 1655, 53, 49, "Output",ExpressionUUID->"dde132a2-568a-4c0e-9b76-0bb27fc1f9a0"]
+}, Open  ]],
+Cell[772983, 23210, 649, 20, 30, "Input",ExpressionUUID->"410e300a-b772-4fb9-9893-8cb4b500481c"],
+Cell[CellGroupData[{
+Cell[773657, 23234, 2761, 87, 91, InheritFromParent,ExpressionUUID->"33751858-097b-46e6-b805-a99f24b1848a"],
+Cell[776421, 23323, 1630, 53, 49, "Output",ExpressionUUID->"960c100c-5d28-4f54-ae64-1c50f21e52cc"]
+}, Open  ]],
+Cell[778066, 23379, 279, 5, 30, "Input",ExpressionUUID->"958a75ba-b780-408b-b98b-56fe74ac1d31"],
+Cell[778348, 23386, 2781, 78, 157, "Input",ExpressionUUID->"16170c84-da20-4951-9790-f182f1ec55fc"],
+Cell[781132, 23466, 217, 4, 30, "Input",ExpressionUUID->"03e94392-cf42-49b7-a691-a7616de5ceb0"],
+Cell[781352, 23472, 2516, 75, 157, "Input",ExpressionUUID->"6bbcf7e4-89e3-47fe-aea0-c5cbd68c79fd"],
+Cell[CellGroupData[{
+Cell[783893, 23551, 364, 12, 30, "Input",ExpressionUUID->"b1d1d389-01f2-416e-963c-fe00e4efd1cf"],
+Cell[784260, 23565, 1954, 60, 43, "Output",ExpressionUUID->"9c3ebd57-6b58-4f71-9859-7a4adaf95bd1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[786251, 23630, 475, 14, 30, "Input",ExpressionUUID->"36681bde-6a5a-4c92-9cfe-f40df9420e22"],
+Cell[786729, 23646, 1935, 60, 43, "Output",ExpressionUUID->"ab29d7b8-18bf-423c-9174-a7d1c44783d1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[788701, 23711, 430, 13, 30, "Input",ExpressionUUID->"bc368e8c-72c3-4e35-98a6-8bce8c113d5b"],
+Cell[789134, 23726, 1933, 60, 47, "Output",ExpressionUUID->"fecf44e0-2d99-40ab-b9e5-879827bac745"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[791104, 23791, 552, 17, 30, "Input",ExpressionUUID->"95163c00-ccbd-49c3-8f88-79127e1d917d"],
+Cell[791659, 23810, 1980, 61, 47, "Output",ExpressionUUID->"8b1e897a-3fe5-4737-b2fa-29baa2a8a959"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[793676, 23876, 4003, 119, 43, "Input",ExpressionUUID->"042d5311-7d8e-415b-a802-14d00b61b625"],
+Cell[797682, 23997, 3851, 118, 47, "Output",ExpressionUUID->"cd3cd4de-4f80-498d-9fb1-e024dcc81d97"]
+}, Open  ]],
+Cell[801548, 24118, 156, 3, 30, "Input",ExpressionUUID->"7da66d72-36e6-4450-8180-037cdf811064"],
+Cell[CellGroupData[{
+Cell[801729, 24125, 3470, 106, 47, "Input",ExpressionUUID->"89921530-27e5-44c0-80eb-97c0c6e50468"],
+Cell[805202, 24233, 3251, 105, 49, "Output",ExpressionUUID->"375d38c8-4ba3-409d-9ef1-beaddefcc904"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[808490, 24343, 4028, 119, 43, "Input",ExpressionUUID->"341b2f54-659c-4343-9a28-eb91b97265ca"],
+Cell[812521, 24464, 153, 3, 34, "Output",ExpressionUUID->"19536f0c-9241-4075-863c-08fc2ef7d5cc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[812711, 24472, 471, 14, 30, "Input",ExpressionUUID->"4301e5e4-2189-47c8-9bb9-3dc7c4ea4154"],
+Cell[813185, 24488, 443, 10, 28, "Message",ExpressionUUID->"684755cc-4557-44e4-a62b-4a58b6fb7a29"],
+Cell[813631, 24500, 430, 10, 28, "Message",ExpressionUUID->"7ce68782-7267-4993-8217-241cb2fb4ac5"],
+Cell[814064, 24512, 246, 5, 34, "Output",ExpressionUUID->"cdec77b3-758c-4967-9d2f-d11b06868a12"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[814347, 24522, 474, 14, 30, "Input",ExpressionUUID->"de97f430-d7f9-4aab-ac9a-41957b765d96"],
+Cell[814824, 24538, 415, 10, 28, "Message",ExpressionUUID->"c360a6f4-f7a9-4f84-8dab-fa3dd826f4c9"],
+Cell[815242, 24550, 403, 10, 28, "Message",ExpressionUUID->"2f403488-5caf-4fcb-a58e-aa75c1e130b8"],
+Cell[815648, 24562, 218, 5, 34, "Output",ExpressionUUID->"43608736-2d6d-4291-bae8-a2f8dee8024e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[815903, 24572, 587, 17, 30, "Input",ExpressionUUID->"3590ca73-50e8-492e-8559-dd9b0681a991"],
+Cell[816493, 24591, 316, 8, 34, "Output",ExpressionUUID->"d6cd1684-48b4-4bed-90fa-dd3682ff3a1a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[816846, 24604, 369, 6, 30, "Input",ExpressionUUID->"1bd2f1d5-eb15-4937-a708-e0061897ef29"],
+Cell[817218, 24612, 315, 6, 34, "Output",ExpressionUUID->"396a27a7-be19-4975-8c72-aacaac9d7b25"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[817570, 24623, 691, 20, 30, "Input",ExpressionUUID->"7267451d-53dc-4179-b2ea-923ebb282270"],
+Cell[818264, 24645, 177, 3, 34, "Output",ExpressionUUID->"06006c09-c3bb-4dd5-8ed3-a3b577771ce1"]
+}, Open  ]],
+Cell[818456, 24651, 248, 4, 30, "Input",ExpressionUUID->"0b20fcac-1ab6-4ac1-816c-3c85fe8a123b"],
+Cell[CellGroupData[{
+Cell[818729, 24659, 533, 16, 30, "Input",ExpressionUUID->"66c8cefb-e41d-4afc-836f-84050e9de8a6"],
+Cell[819265, 24677, 410, 10, 28, "Message",ExpressionUUID->"843dc3e6-b7ac-409d-af31-6181cbfa1fae"],
+Cell[819678, 24689, 463, 10, 28, "Message",ExpressionUUID->"f58de5c1-0ec0-4fb3-b7ac-bef7f3754c14"],
+Cell[820144, 24701, 404, 10, 28, "Message",ExpressionUUID->"e7045851-37c1-431d-96ec-745f15dbfc08"],
+Cell[820551, 24713, 242, 5, 34, "Output",ExpressionUUID->"a968897e-5138-4419-8e1f-9c94e4772e8d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[820830, 24723, 607, 17, 30, "Input",ExpressionUUID->"a9380db0-2e26-4d9b-8acd-d1f4b51c2dc8"],
+Cell[821440, 24742, 375, 12, 34, "Output",ExpressionUUID->"89538886-35c3-4e3c-81ca-d5a35181c6dd"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[745937, 22344, 197, 3, 54, "Subsection",ExpressionUUID->"6a07b594-bf59-486d-bf4a-1d684f02071a"],
+Cell[821864, 24760, 197, 3, 54, "Subsection",ExpressionUUID->"6a07b594-bf59-486d-bf4a-1d684f02071a"],
 Cell[CellGroupData[{
-Cell[746159, 22351, 473, 14, 30, "Input",ExpressionUUID->"388effa3-0024-4727-8ee5-74ef678e5851"],
-Cell[746635, 22367, 177, 3, 34, "Output",ExpressionUUID->"8c237e7b-4056-4363-b93c-049fda50e5b3"]
+Cell[822086, 24767, 473, 14, 30, "Input",ExpressionUUID->"388effa3-0024-4727-8ee5-74ef678e5851"],
+Cell[822562, 24783, 177, 3, 34, "Output",ExpressionUUID->"8c237e7b-4056-4363-b93c-049fda50e5b3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[746849, 22375, 473, 14, 30, "Input",ExpressionUUID->"4cf11f59-59c2-4a07-aecf-a9241e4117b4"],
-Cell[747325, 22391, 175, 3, 34, "Output",ExpressionUUID->"37c97b12-7596-4636-9c8b-175b9edcb0d2"]
+Cell[822776, 24791, 473, 14, 30, "Input",ExpressionUUID->"4cf11f59-59c2-4a07-aecf-a9241e4117b4"],
+Cell[823252, 24807, 175, 3, 34, "Output",ExpressionUUID->"37c97b12-7596-4636-9c8b-175b9edcb0d2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[747537, 22399, 472, 14, 30, "Input",ExpressionUUID->"fe38f6e8-2370-4cc2-8196-8650d5155f56"],
-Cell[748012, 22415, 177, 3, 34, "Output",ExpressionUUID->"f4d0bb78-9506-4b44-b7ee-058efc15b11d"]
+Cell[823464, 24815, 472, 14, 30, "Input",ExpressionUUID->"fe38f6e8-2370-4cc2-8196-8650d5155f56"],
+Cell[823939, 24831, 177, 3, 34, "Output",ExpressionUUID->"f4d0bb78-9506-4b44-b7ee-058efc15b11d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[748226, 22423, 471, 14, 30, "Input",ExpressionUUID->"1da24840-093a-48d6-a502-d464014078df"],
-Cell[748700, 22439, 177, 3, 34, "Output",ExpressionUUID->"6847a845-ab6a-475c-9e07-03248a232a3e"]
+Cell[824153, 24839, 471, 14, 30, "Input",ExpressionUUID->"1da24840-093a-48d6-a502-d464014078df"],
+Cell[824627, 24855, 177, 3, 34, "Output",ExpressionUUID->"6847a845-ab6a-475c-9e07-03248a232a3e"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[748926, 22448, 196, 3, 54, "Subsection",ExpressionUUID->"c90a3932-47f9-42a5-bb56-565189a03c31"],
+Cell[824853, 24864, 196, 3, 54, "Subsection",ExpressionUUID->"c90a3932-47f9-42a5-bb56-565189a03c31"],
 Cell[CellGroupData[{
-Cell[749147, 22455, 405, 11, 30, "Input",ExpressionUUID->"0113f77f-cb3d-46d6-bc63-8a298bf31f3c"],
-Cell[749555, 22468, 3578, 110, 38, "Output",ExpressionUUID->"df408610-181f-463f-80fa-8a1bec8eb6e3"]
+Cell[825074, 24871, 405, 11, 30, "Input",ExpressionUUID->"0113f77f-cb3d-46d6-bc63-8a298bf31f3c"],
+Cell[825482, 24884, 3578, 110, 38, "Output",ExpressionUUID->"df408610-181f-463f-80fa-8a1bec8eb6e3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[753170, 22583, 447, 12, 30, "Input",ExpressionUUID->"17cf8a71-be6c-4ae2-ab41-3c79e75aba20"],
-Cell[753620, 22597, 224, 3, 34, "Output",ExpressionUUID->"a8a2c91d-346c-46a6-aa5d-dac60ba6cde9"]
+Cell[829097, 24999, 447, 12, 30, "Input",ExpressionUUID->"17cf8a71-be6c-4ae2-ab41-3c79e75aba20"],
+Cell[829547, 25013, 224, 3, 34, "Output",ExpressionUUID->"a8a2c91d-346c-46a6-aa5d-dac60ba6cde9"]
 }, Open  ]]
 }, Open  ]]
 }
