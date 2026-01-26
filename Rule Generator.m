@@ -11,3 +11,10 @@ ReleaseHold[If[neg, Times[-1,Pattern[Evaluate[-1*a],Blank[]]],Pattern[Hold[a],Bl
 
 RuleAGP[IndexCombos_]:=Map[With[{Under=Join[Map[PatternAll[#]&,#]]},Gg_[Under[[1]],Under[[2]],Under[[4]]]*Op1_[j__,Under[[5]]]*Op_[Under[[3]]]:>If[Gg==G,epsilong[#[[2]],#[[4]]]CD[#[[3]]]@Op[] CD[#[[5]]]@Op1[j]]
 ]&,IndexCombos]
+
+RuleGAA[IndexCombos_]:=Map[With[{Under=Join[Map[PatternAll[#]&,#]]},Gg_[Under[[1]],Under[[2]],Under[[4]]]*Op1_[j__,Under[[5]]]*Op_[k__,Under[[3]]]:>If[Gg==G,epsilong[#[[2]],#[[4]]]CD[#[[3]]]@Op[k] CD[#[[5]]]@Op1[j]]
+]&,IndexCombos]
+
+RuleDA={CD1_[\[Mu]_]@Op_[\[Nu]_,a_]:>If[Op==A&&CD1==CD,CD1[\[Mu]]@Op[\[Nu]]]}
+
+RuleDP={CD1_[\[Mu]_]@Op_[a_]:>If[Op==\[Phi]&&CD1==CD,CD1[\[Mu]]@Op[]]}
