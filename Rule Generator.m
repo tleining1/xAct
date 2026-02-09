@@ -32,7 +32,27 @@ RuleGPDP[\[Mu]_,a_]:=Module[{b,c,\[Rho],\[Sigma]},Gg_[b_,a,c_]Op_[-c_]CD1_[\[Mu]
 
 (*General rules*)
 
-RuleGen[IndexCombos]:=Map[With[{Under=Join[Map[PatternAll[#]&,#]]},Gg_[Under[[1]],Under[[2]],Under[[4]]]*Op1_[j___,Under[[5]]]*Op_[k___,Under[[3]]]:>If[Gg==G,epsilong[#[[2]],#[[4]]]CD[#[[3]]]@Op[k] CD[#[[5]]]@Op1[j]]
+RuleGen[IndexCombos_]:=Map[With[{Under=Join[Map[PatternAll[#]&,#]]},Gg_[Under[[1]],Under[[2]],Under[[4]]]*Op1_[j___,Under[[5]]]*Op_[k___,Under[[3]]]:>If[Gg==G,epsilong[#[[2]],#[[4]]]CD[#[[3]]]@Op[k] CD[#[[5]]]@Op1[j]]
 ]&,IndexCombos]
 
 RuleA={CD1_[\[Mu]_]@Op_[\[Nu]___,a_]:>If[CD1==CD,CD1[\[Mu]]@Op[\[Nu]]]}
+
+(*Rule for mutliple G*)
+RuleGG={expr__:>Module[{free,gFree,gIndicies,sharedG,elems,oIndex,outside,A,iIndex,inside},
+free=List@@IndicesOf[Free][expr];
+gFree=Cases[expr,term_[inds___]/;ContainsAny[{inds},List@@free]&&term==G];
+Catch[If[Length[gFree]>1,Throw["Error: too many free indices"],
+gIndicies=List@@IndicesOf[G][expr];
+sharedG=Flatten[NegSet[Select[gIndicies,MemberQ[#,-#]&]]];
+oIndex=Complement[List@@IndicesOf[][gFree],sharedG,free];
+outside=gFree[[1]]*Cases[expr,A_[a___,-oIndex[[1]],b___]][[1]];
+inside=ToCanonical[(expr/outside)]/.RuleGen[IndexCombos];
+iIndex=Complement[sharedG,List@@IndicesOf[][gFree]][[1]];
+DefTensor[A[a],ManifoldVariable];
+(ToCanonical[outside*A[iIndex]]/.RuleGen[IndexCombos])/.{A[]:>inside}
+]
+]
+]}
+
+
+
