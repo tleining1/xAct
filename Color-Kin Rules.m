@@ -13,9 +13,10 @@ cTermIndex=Transpose[{Flatten[colorTerms],Flatten[dIndicies]}];
 otherTerms*Times@@Map[#[[1]]/.{CD_[\[Mu]_]@A_[\[Nu]___,-#[[2]]]:>CD[\[Mu]]@A[\[Nu]],A_[\[Nu]___,-#[[2]]]:>A[\[Nu]]}&,cTermIndex]
 ]};
 
-colorKin4={expr__:>
-Module[{Gg,colorTerms,otherTerms,cTermIndex,cTerms},
-Gg=Partition[List@@IndicesOf[G][expr],3];
+colorKin6={expr__:>
+Module[{casesG,Gg,colorTerms,otherTerms,cTermIndex,cTerms},
+casesG=Cases[expr,G[___]];
+Gg=Map[List@@IndicesOf[][#]&,casesG];
 If[Length[Gg]==0,expr/.colorNoStruc,
 colorTerms=Map[Module[{term1,term2,term3,gIndex1,gIndex2,gIndex3},
 gIndex1=#[[1]];
@@ -26,11 +27,12 @@ term2=If[Length[Cases[expr,CD_[\[Mu]_]@A_[\[Nu]___,-gIndex2]|A_[\[Nu]___,-gIndex
 term3=If[Length[Cases[expr,CD_[\[Mu]_]@A_[\[Nu]___,-gIndex3]|A_[\[Nu]___,-gIndex3]]]==0,1,Cases[expr,CD_[\[Mu]_]@A_[\[Nu]___,-gIndex3]|A_[\[Nu]___,-gIndex3]][[1]]];
 {term1,term2,term3}
 ]&,Gg];
+Gg;
 otherTerms=(expr/(Times@@Flatten[colorTerms]*Times@@Flatten[Cases[expr,G[___]]]));
-cTermIndex=Transpose[{Flatten[colorTerms],Flatten[Gg]}];
-cTerms=Map[{#[[1]]/.{CD_[\[Mu]_]@A_[\[Nu]___,-#[[2]]]:>CD[\[Mu]]@A[\[Nu]],A_[\[Nu]___,-#[[2]]]:>A[\[Nu]]}
-,#[[2]]}&,cTermIndex];
-otherTerms*cTerms[[1]][[1]]*epsilong[-cTerms[[2]][[2]],-cTerms[[3]][[2]]]CD[cTerms[[2]][[2]]]@cTerms[[2]][[1]] CD[cTerms[[3]][[2]]]@cTerms[[3]][[1]]
+cTermIndex=Map[Transpose[{#[[1]],#[[2]]}]&,Transpose[{colorTerms,Gg}]];
+cTerms=Map[Map[{#[[1]]/.{CD_[\[Mu]_]@A_[\[Nu]___,-#[[2]]]:>CD[\[Mu]]@A[\[Nu]],A_[\[Nu]___,-#[[2]]]:>A[\[Nu]]}
+,#[[2]]}&,#]&,cTermIndex];
+otherTerms*Times@@Map[#[[1]][[1]]*epsilong[-#[[2]][[2]],-#[[3]][[2]]]CD[#[[2]][[2]]]@#[[2]][[1]] CD[#[[3]][[2]]]@#[[3]][[1]]&,cTerms]
 ]]};
 
 GGRule={expr__:>Module[{X},
